@@ -33,7 +33,7 @@ contract LendingProtocol {
         pair = address(_pair);
         if (
             !((_pair.token0() == _ctf && _pair.token1() == _usd) ||
-                (_pair.token0() == _ctf && _pair.token1() == _usd))
+                (_pair.token1() == _ctf && _pair.token0() == _usd))
         ) {
             revert InvalidArguments();
         }
